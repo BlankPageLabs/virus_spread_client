@@ -7,97 +7,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
      <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="bacteria.png" />
     <script src="http://code.jquery.com/jquery-2.1.3.min.js  " type="text/javascript"></script>
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <!-- Если вы используете API локально, то в URL ресурса необходимо указывать протокол в стандартном виде (http://...)-->
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-    <script src="/circle.js" type="text/javascript"></script>
-	<style>
+    <script src="circle.js" type="text/javascript"></script>
+	   <style>
             html,body {
-               width: 100%; height: 100%; padding: 0; margin: 0; 
+               width: 100%; height: 100%; padding: 0; margin: 0;
             }
         #map {
-            width: 82%; height: 92%; padding: 0;
-            position:fixed;  z-index:9999; 
+            width: 100%; height: 100%; padding: 0;
+            position:fixed;  z-index:9999;
         }
          .navbar {width: 100%; height: 100%;}
          #rating {color: #FDFAFA;}
     </style>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Virus Spread</a>
-        </div>
-          </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-              <div id="map"></div>
-          </div>
-          <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-              <div id="rating">
-                   
-              </div>
-        </div>
-          
-          
-        </div>
-      </div>
-    </div>
-        
-    
-    
-     
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script>
-        
-        var rating = {'records':  [
-		{ 'Name' : 'Leo', 'Count' : 94},
-                { 'Name' : 'Sasha', 'Count' : 123},
-                { 'Name' : 'Lena', 'Count' : 90}
-	]};
-        //alert(rating.records.length);
-//document.getElementById('rating').innerHTML = 'leva';
-                
-        for(i = 0; i < rating.records.length; i++) {
-            
-        document.getElementById('rating').innerHTML += '<p>'+rating.records[i].Name + '....' +rating.records[i].Count;
-        
-    }
-        
-    </script>
-    
-    <script>
-         jQuery(document).ready(function() {
-            $.ajax({
-             url:"time.php",
-             type:"POST",
-             dataType: 'text',
-                success: function (result) {
-                alert (result); // {"name":"Goper"}
-                // данные в строке, сама строка – json –строка, ее нужно распарсить
-                var event = JSON.parse (result);
-                alert (event.name); // Goper
-}
-});
-});
-    </script>
+  <h2 style="float: right;
+  z-index: 99999;
+  position: relative;
+  margin-right: 1%;
+  background-color: rgba(170, 203, 217, 1);
+  padding: 1%;
+  border-radius: 1%;
+  color: rgb(62, 84, 57);">Virus Spread</h2>
+  <div id="map"></div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
