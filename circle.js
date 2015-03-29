@@ -19,8 +19,8 @@ function init() {
     // Создаем карту.
     var myMap = new ymaps.Map("map", {
         center: [53.9, 27.56667],
-        zoom: 13,
-        controls: []
+        zoom: 13
+        //controls: []
     });
 
     
