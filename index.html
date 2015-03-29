@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Примеры. Круг</title>
+    <title>Virus Spread</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,10 +22,11 @@
                width: 100%; height: 100%; padding: 0; margin: 0; 
             }
         #map {
-            width: 80%; height: 80%; padding: 0;
+            width: 82%; height: 92%; padding: 0;
             position:fixed;  z-index:9999; 
         }
          .navbar {width: 100%; height: 100%;}
+         #rating {color: #FDFAFA;}
     </style>
 </head>
 <body>
@@ -38,16 +39,8 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
+          <a class="navbar-brand" href="#">Virus Spread</a>
         </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Help</a></li>
-          </ul>
-            </div>
           </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
               <div id="map"></div>
@@ -55,12 +48,9 @@
           <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Overview</a></li>
-            <li><a href="#">Reports</a></li>
-            <li><a href="#">Analytics</a></li>
-            <li><a href="#">Export</a></li>
-          </ul>
+              <div id="rating">
+                   
+              </div>
         </div>
           
           
@@ -68,7 +58,7 @@
       </div>
     </div>
         
-    <div>lol</div>
+    
     
      
 
@@ -76,5 +66,24 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script>
+        
+        var rating = {'records':  [
+		{ 'Name' : 'Leo', 'Count' : 94},
+                { 'Name' : 'Sasha', 'Count' : 123},
+                { 'Name' : 'Lena', 'Count' : 90}
+	]};
+        //alert(rating.records.length);
+//document.getElementById('rating').innerHTML = 'leva';
+                
+        for(i = 0; i < rating.records.length; i++) {
+            
+        document.getElementById('rating').innerHTML += '<p>'+rating.records[i].Name + '....' +rating.records[i].Count;
+        
+    }
+        
+    </script>
+    
+
 </body>
 </html>
